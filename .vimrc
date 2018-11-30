@@ -47,6 +47,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
+Plug 'andreasvc/vim-256noir'
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -77,6 +78,7 @@ Plug 'honza/vim-snippets'
 "" Color
 Plug 'tomasr/molokai'
 Plug 'https://github.com/altercation/vim-colors-solarized'
+Plug 'https://github.com/vim-scripts/neutron.vim'
 
 "*****************************************************************************
 "" Custom bundles
@@ -172,12 +174,16 @@ set ruler
 set number
 
 let no_buffers_menu=1
-if !exists('g:not_finish_vimplug')
-  colorscheme molokai
-endif
+
+
+colorscheme 256_noir
+set cursorline
+highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
+autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
+autocmd InsertLeave * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
 
 set mousemodel=popup
-set t_Co=256
+"set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
 
@@ -593,4 +599,3 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
-set background=light
