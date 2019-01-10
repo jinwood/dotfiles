@@ -20,3 +20,12 @@ sudo pacman -S feh
 sudo pacman -S ntp
 sudo timedatectl set-ntp true
 sudo timedatectl set-timezone Europe/London
+
+#this should only be ran on thinkpads //todo
+sudo pacman -S tlp tlp-rdw 
+sudo pacman -S tp_smapi linux419-acpi_call 
+systemctl enable tlp.service
+systemctl enable tlp-sleep.service
+systemctl mask systemd-rfkill.service
+systemctl mask systemd-rfkill.socket
+
