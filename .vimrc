@@ -1,4 +1,4 @@
-" vim-bootstrap b0a75e4
+"vim-bootstrap b0a75e4
 
 "*****************************************************************************
 "" Vim-PLug core
@@ -48,6 +48,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'avelino/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'andreasvc/vim-256noir'
+Plug 'NLKNguyen/papercolor-theme'
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 else
@@ -176,7 +177,8 @@ set number
 let no_buffers_menu=1
 
 
-colorscheme 256_noir
+colorscheme PaperColor
+set background=dark
 set cursorline
 highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=233 guifg=NONE guibg=#121212
 autocmd InsertEnter * highlight CursorLine cterm=NONE ctermfg=NONE ctermbg=234 guifg=NONE guibg=#1c1c1c
