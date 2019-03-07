@@ -212,6 +212,9 @@ defaults write NSGlobalDomain KeyRepeat -int 2
 mkdir -p ~/Pictures/Screen\ Shots
 defaults write com.apple.screencapture location ~/Screen\ Shots
 
+# capslock to esc 
+hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000029}]}'
+
 
 killall Dock
 killall Finder
