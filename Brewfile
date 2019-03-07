@@ -14,6 +14,7 @@ brew 'zsh-completions'
 
 cask 'alfred'
 cask 'firefox'
+cask 'iterm2'
 cask 'sublime-text'
 
 # Fonts
