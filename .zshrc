@@ -1,5 +1,6 @@
 alias vim=nvim
 export PATH=/usr/local/bin:$PATH
+export GOPATH=$HOME/go
 autoload -Uz compinit; compinit
 autoload -Uz promptinit; promptinit
 prompt pure
