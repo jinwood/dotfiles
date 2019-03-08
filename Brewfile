@@ -18,6 +18,7 @@ brew 'zsh-syntax-highlighting'
 cask 'alfred'
 cask 'firefox'
 cask 'iterm2'
+cask 'spotify'
 cask 'sublime-text'
 
 # Fonts
