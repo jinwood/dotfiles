@@ -1,7 +1,7 @@
 brew 'bash'
 brew 'coreutils' #macos bundled are outdated
 brew 'git'
-brew 'go'
+brew 'golang'
 brew 'grep'
 brew 'node'
 brew 'nvim'
@@ -10,7 +10,10 @@ brew "python@3"
 
 brew 'zsh'
 brew 'zsh-completions'
-
+brew 'zsh-autosuggestions'
+brew 'zsh-completions'
+brew 'zsh-history-substring-search'
+brew 'zsh-syntax-highlighting'
 
 cask 'alfred'
 cask 'firefox'

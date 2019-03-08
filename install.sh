@@ -1,4 +1,5 @@
 DOTLOC=$HOME/repos/dotfiles
+FUNPATH=/usr/local/share/zsh/site-functions
 
 # install homebrew if missing
 if [[ ! -x "$(command -v brew)" ]]; then
@@ -19,12 +20,29 @@ do
   ln -s "$DOTLOC/$file" ~/.$file
 done
 
+# cleanup old prompt files
+if [[ -x $FUNPATH/prompt_pure_setup && -x $FUNPATH/async ]]; then
+  rm -f $FUNPATH/prompt_pure_setup
+  rm -f $FUNPATH/async
+fi
+
+doing "Installing completions..."
+if [[ -x $FUNPATH/_repo ]]; then
+  rm -f $FUNPATH/_repo
+fi
+ln -s "$DOTLOC/completions/_repo" $FUNPATH/_repo
+success
+
 # change default shell to zsh
 chsh -s zsh
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
 ln -s $HOME/repos/dotfiles/.zshrc $HOME/.zshrc
+
+# install ohmyzsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+<Paste>
 
 
 # linking files
