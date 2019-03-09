@@ -17,7 +17,10 @@ brew 'zsh-syntax-highlighting'
 
 cask 'alfred'
 cask 'firefox'
+cask "font-inconsolata"
+cask "font-source-code-pro"
 cask 'iterm2'
+cask 'mongodb'
 cask 'spotify'
 cask 'sublime-text'
 

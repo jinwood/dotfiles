@@ -12,6 +12,9 @@ fi
 echo "Installing packages"
 brew bundle install --file="./Brewfile" >/dev/null
 
+#install deno
+curl -fsSL https://deno.land/x/install/install.sh | sh
+
 # link required files
 echo "Linking Files..."
 for file in zshrc zshenv gitconfig gitignore

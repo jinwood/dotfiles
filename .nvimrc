@@ -31,6 +31,7 @@ call plug#begin(expand('~/.config/nvim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'eafgarland/typescript-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'tpope/vim-commentary'
@@ -77,6 +78,7 @@ Plug 'honza/vim-snippets'
 "" Color
 Plug 'tomasr/molokai'
 Plug 'fcpg/vim-orbital'
+Plug 'neutaaaaan/monosvkem'
 
 "*****************************************************************************
 "" Custom bundles
@@ -195,7 +197,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-  colorscheme orbital
+  colorscheme monosvkem
 endif
 
 set mousemodel=popup
