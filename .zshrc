@@ -16,3 +16,5 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 # Add homebrew python to the path
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+ZSH_THEME="agnoster"
