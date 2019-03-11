@@ -1,5 +1,6 @@
 brew 'bash'
 brew 'coreutils' #macos bundled are outdated
+brew 'docker'
 brew 'git'
 brew 'golang'
 brew 'grep'
