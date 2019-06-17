@@ -12,7 +12,12 @@ autoload -Uz promptinit; promptinit
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion" 
 
 # My aliases
-vim=nvim
+alias vim=nvim
+
+# git
+alias s="git status"
+alias reset="git reset --hard"
+alias gf="git fetch"
 
 # Add homebrew python to the path
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
