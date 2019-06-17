@@ -16,6 +16,7 @@ alias vim=nvim
 
 # git
 alias s="git status"
+alias gaa="git add ."
 alias reset="git reset --hard"
 alias gf="git fetch"
 
