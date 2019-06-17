@@ -45,8 +45,6 @@ ln -s $HOME/repos/dotfiles/.zshrc $HOME/.zshrc
 
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-<Paste>
-
 
 # linking files
 for file in vimrc

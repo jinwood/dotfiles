@@ -24,9 +24,6 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
-# Save to disk (not to iCloud) by default
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
@@ -43,9 +40,6 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5
 
 # Enable scroll gestures for Dock icons
 defaults write com.apple.dock scroll-to-open -bool true
-
-# Show only active apps in Dock
-defaults write com.apple.dock static-only -bool true
 
 # Disable smart quotes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
@@ -137,11 +131,6 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 # Disable warning when emptying trash
 defaults write com.apple.finder WarnOnEmptyTrash -bool false
-
-# Remove Dropbox's green checkmarks in Finder
-file=/Applications/Dropbox.app/Contents/Resources/emblem-dropbox-uptodate.icns 
-[ -e "${file}" ] && mv -f "${file}" "${file}.bak"
-unset file
 
 ### Safari ###
 

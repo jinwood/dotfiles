@@ -1,13 +1,11 @@
 brew 'bash'
 brew 'coreutils' #macos bundled are outdated
-brew 'docker'
 brew 'git'
 brew 'golang'
 brew 'grep'
-brew 'node'
+brew 'nvm'
 brew 'nvim'
-brew "python@2", link: false
-brew "python@3"
+brew 'python3'
 
 brew 'zsh'
 brew 'zsh-completions'
@@ -18,12 +16,13 @@ brew 'zsh-syntax-highlighting'
 
 cask 'alfred'
 cask 'firefox'
+cask 'chromium'
 cask "font-inconsolata"
 cask "font-source-code-pro"
 cask 'iterm2'
 cask 'mongodb'
-cask 'spotify'
 cask 'sublime-text'
+cask 'visual-studio-code'
 
 # Fonts
 cask 'font-lato'
