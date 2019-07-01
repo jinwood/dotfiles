@@ -1,3 +1,9 @@
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+# Deno
+export PATH="/Users/xrgck/.deno/bin:$PATH"
+
 alias vim=nvim
 export PATH=/usr/local/bin:$PATH
 export PATH="/Users/julian/.deno/bin:$PATH"
