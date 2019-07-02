@@ -60,4 +60,11 @@ echo "linking ${DOTLOC}/.vimrc to ~/.config/nvim/init.vim"
 ln -s $DOTLOC/.nvimrc ~/.config/nvim/init.vim
 pip3 install neovim
 
+echo "Installing patched fonts"
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
 echo "done"
