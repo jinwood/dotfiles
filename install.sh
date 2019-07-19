@@ -12,12 +12,18 @@ fi
 echo "Installing packages"
 brew bundle install --file="./Brewfile" >/dev/null
 
+#install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
 #install deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
+#install neovim python deps
+pip install --user neovim
+
 # link required files
 echo "Linking Files..."
-for file in zshrc zshenv gitconfig gitignore
+for file in zshrc zshenv gitconfig gitignore nvimrc
 do
   rm ~/.$file &>/dev/null
   ln -s "$DOTLOC/$file" ~/.$file
