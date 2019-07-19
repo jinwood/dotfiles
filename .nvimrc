@@ -97,6 +97,9 @@ Plug 'mattn/emmet-vim'
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
 
+" Flow
+Plug 'flowtype/vim-flo'
+
 
 " python
 "" Python Bundle

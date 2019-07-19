@@ -21,6 +21,10 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 #install neovim python deps
 pip install --user neovim
 
+#create nvim config dir
+mkdir ~/.config
+mkdir ~/.config/nvim
+
 # link required files
 echo "Linking Files..."
 for file in zshrc zshenv gitconfig gitignore nvimrc
