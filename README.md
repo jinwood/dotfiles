@@ -14,6 +14,8 @@ PATH="./node_modules/.bin:$PATH"' ~/.bashrc
 ```
 
 # fix audio shit
+```
 pulseaudio -k
 sudo alsa force-reload
 pulseaudio --start
+```
