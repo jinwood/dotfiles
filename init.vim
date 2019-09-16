@@ -1,0 +1,1 @@
+/home/xrgck/.config/nvim/init.vim

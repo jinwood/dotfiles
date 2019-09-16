@@ -1,16 +1,21 @@
 DOTLOC=$HOME/repos/dotfiles
 FUNPATH=/usr/local/share/zsh/site-functions
 
-# install homebrew if missing
-if [[ ! -x "$(command -v brew)" ]]; then
-  echo "Installing homebrew...\\n"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-  echo "Homebrew is already installed.\\n"
+info() {
+    printf "\033[00;34m$@\033[0m\n"
+}
+
+info "Configuring"
+
+if [ "$(uname)" == "Darwin" ]; then
+	echo "Configuring macOS"
+	./os/macos/install.sh
+	./os/macos/configure.sh
+elif [ "$(uname)" == "Linux" ]; then
+	echo "Configuring Linux"
+	./os/ubuntu/install.sh
 fi
 
-echo "Installing packages"
-brew bundle install --file="./Brewfile" >/dev/null
 
 #install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
@@ -32,6 +37,7 @@ do
   rm ~/.$file &>/dev/null
   ln -s "$DOTLOC/$file" ~/.$file
 done
+ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
 
 # cleanup old prompt files
 if [[ -x $FUNPATH/prompt_pure_setup && -x $FUNPATH/async ]]; then
@@ -56,14 +62,6 @@ ln -s $HOME/repos/dotfiles/.zshrc $HOME/.zshrc
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# linking files
-for file in vimrc
-do
-  rm /.$file &>/dev/null
-  ln -s "$DOTLOC/$file" ~/.$file
-done
-
-echo "nvim"
 mkdir -p ~/.config/
 mkdir -p ~/.config/nvim/
 echo "linking ${DOTLOC}/.vimrc to ~/.config/nvim/init.vim"
