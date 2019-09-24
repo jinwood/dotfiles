@@ -1,10 +1,11 @@
+brew 'node'
 brew 'bash'
 brew 'coreutils' #macos bundled are outdated
 brew 'git'
 brew 'golang'
 brew 'grep'
 brew 'nvm'
-brew 'nvim'
+brew 'neovim'
 brew 'python3'
 
 brew 'zsh'

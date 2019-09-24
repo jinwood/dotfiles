@@ -97,6 +97,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -124,3 +125,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
