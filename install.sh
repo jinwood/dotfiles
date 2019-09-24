@@ -20,6 +20,10 @@ fi
 #install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
+#install vim plug
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 #install deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
