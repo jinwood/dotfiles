@@ -10,6 +10,7 @@ export PATH="/Users/xrgck/.deno/bin:$PATH"
 alias vim=nvim
 export PATH=/usr/local/bin:$PATH
 export PATH="/Users/julian/.deno/bin:$PATH"
+export PATH="/home/xrgck/repos/personal/dotfiles/bin"
 export GOPATH=$HOME/go
 autoload -Uz compinit; compinit
 autoload -Uz promptinit; promptinit

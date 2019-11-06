@@ -79,4 +79,7 @@ cd fonts
 cd ..
 rm -rf fonts
 
+# set executable
+chmod +x ./bin/tat
+
 echo "done"
