@@ -17,9 +17,6 @@ elif [ "$(uname)" == "Linux" ]; then
 fi
 
 
-#install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-
 #install vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -29,10 +26,6 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 
 #install neovim python deps
 pip install --user neovim
-
-#create nvim config dir
-mkdir ~/.config
-mkdir ~/.config/nvim
 
 # link required files
 echo "Linking Files..."
@@ -67,17 +60,9 @@ ln -s $HOME/repos/dotfiles/.zshrc $HOME/.zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 mkdir -p ~/.config/
-mkdir -p ~/.config/nvim/
 echo "linking ${DOTLOC}/.vimrc to ~/.config/nvim/init.vim"
 ln -s $DOTLOC/.nvimrc ~/.config/nvim/init.vim
 pip3 install neovim
-
-echo "Installing patched fonts"
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
 
 # set executable
 chmod +x ./bin/tat
