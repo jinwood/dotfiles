@@ -1,46 +1,15 @@
-# Theme
-ZSH_THEME=agnoster
-
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
-# Deno
-export PATH="/Users/xrgck/.deno/bin:$PATH"
-
-alias vim=nvim
-export PATH=/usr/local/bin:$PATH
-export PATH="/Users/julian/.deno/bin:$PATH"
-export PATH="/home/xrgck/repos/personal/dotfiles/bin"
-export GOPATH=$HOME/go
-autoload -Uz compinit; compinit
-autoload -Uz promptinit; promptinit
-#prompt pure
-
-#NVM
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion" 
-
-# My aliases
-alias vim=nvim
-
-# git
-alias s="git status"
-alias gaa="git add ."
-alias reset="git reset --hard"
-alias gf="git fetch"
-
-# Add homebrew python to the path
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-#
+export ZSH="/Users/xrgck/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -57,8 +26,14 @@ export ZSH=$HOME/.oh-my-zsh
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -98,7 +73,6 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -115,9 +89,6 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -126,4 +97,3 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

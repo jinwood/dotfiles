@@ -7,5 +7,5 @@ else
 fi
 
 echo "Installing packages"
-brew bundle install --file="./Brewfile" >/dev/null
-
+echo $(pwd)
+brew bundle --file="./os/macos/Brewfile"

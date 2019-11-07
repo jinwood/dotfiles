@@ -9,6 +9,8 @@ info "Configuring"
 
 if [ "$(uname)" == "Darwin" ]; then
 	echo "Configuring macOS"
+	chmod +x ./os/macos/install.sh
+	chmod +x ./os/macos/configure.sh
 	./os/macos/install.sh
 	./os/macos/configure.sh
 elif [ "$(uname)" == "Linux" ]; then
@@ -50,7 +52,7 @@ ln -s "$DOTLOC/completions/_repo" $FUNPATH/_repo
 success
 
 # change default shell to zsh
-chsh -s zsh
+chsh -s /bin/zsh
 
 # Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
 rm -rf $HOME/.zshrc
