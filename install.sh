@@ -1,4 +1,4 @@
-DOTLOC=$HOME/repos/dotfiles
+DOTLOC=$HOME/repos/personal/dotfiles
 FUNPATH=/usr/local/share/zsh/site-functions
 
 info() {
@@ -31,12 +31,13 @@ pip install --user neovim
 
 # link required files
 echo "Linking Files..."
-for file in zshrc zshenv gitconfig gitignore nvimrc
+for file in zshrc  gitconfig
 do
   rm ~/.$file &>/dev/null
-  ln -s "$DOTLOC/$file" ~/.$file
+  echo "linking -$DOTLOC/.$file $HOME/.$file"
+  ln -s "$DOTLOC/.$file" "$HOME/.$file"
 done
-ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
+#ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
 
 # cleanup old prompt files
 if [[ -x $FUNPATH/prompt_pure_setup && -x $FUNPATH/async ]]; then
@@ -54,14 +55,10 @@ success
 # change default shell to zsh
 chsh -s /bin/zsh
 
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/repos/dotfiles/.zshrc $HOME/.zshrc
-
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-mkdir -p ~/.config/
+mkdir -p ~/.config/nvim
 echo "linking ${DOTLOC}/.vimrc to ~/.config/nvim/init.vim"
 ln -s $DOTLOC/.nvimrc ~/.config/nvim/init.vim
 pip3 install neovim
