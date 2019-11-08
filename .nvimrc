@@ -98,10 +98,6 @@ Plug 'mattn/emmet-vim'
 "" Javascript Bundle
 Plug 'jelera/vim-javascript-syntax'
 
-" Flow
-Plug 'flowtype/vim-flo'
-
-
 " python
 "" Python Bundle
 Plug 'davidhalter/jedi-vim'
@@ -197,7 +193,7 @@ set number
 
 let no_buffers_menu=1
 if !exists('g:not_finish_vimplug')
-  colorscheme molokai
+  colorscheme Monosvkem
 endif
 
 set mousemodel=popup
