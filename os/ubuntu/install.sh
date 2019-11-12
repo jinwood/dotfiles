@@ -6,6 +6,7 @@ sudo apt install git
 sudo apt install golang
 sudo apt install grep
 sudo apt install python3
+sudo apt install python3-pip
 sudo apt install fzf
 sudo apt install zsh
 sudo apt install zsh-completions
@@ -18,4 +19,7 @@ sudo apt install zsh-syntax-highlighting
 sudo apt install firefox
 sudo apt install chromium
 sudo apt install mongodb
+sudo snap install --classic code
+sudo apt-get install python3-neovim
+sudo apt install neovim
 

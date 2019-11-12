@@ -15,6 +15,7 @@ if [ "$(uname)" == "Darwin" ]; then
 	./os/macos/configure.sh
 elif [ "$(uname)" == "Linux" ]; then
 	echo "Configuring Linux"
+	chmod +x ./os/ubuntu/install.sh
 	./os/ubuntu/install.sh
 fi
 
