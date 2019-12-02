@@ -13,6 +13,7 @@ Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'vim-airline/vim-airline'
 " Appearance and Themes
 Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim'
