@@ -10,8 +10,84 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'flowtype/vim-flow'
 Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Appearance and Themes
+Plug 'sainnhe/gruvbox-material'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
+
+" Tabs and spaces
+set expandtab " On pressing tab, insert 2 spaces
+set tabstop=2 " show existing tab with 2 spaces width
+set softtabstop=2
+set shiftwidth=2 " when indenting with '>', use 2 spaces width
+
+" Misc
+
+set termguicolors
+set background=dark
+colorscheme gruvbox-material
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_enable_bold = 1
+set number " Show line numbers
+set noswapfile " No swap file
+set nobackup
+set nowritebackup
+
+set textwidth=80
+set formatoptions+=t
+set colorcolumn=+1
+set showmatch
+set lazyredraw
+
+" Strip trailing whitespace from all files
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\s\+$//e
+
+" Use the system register for all cut yank and paste operations
+set clipboard=unnamedplus
+
+" --------------------------------
+" Search
+" Ignore node_modules and images from search results
+set wildignore+=**/node_modules/**,**/dist/**,**_site/**,*.swp,*.png,*.jpg,*.gif,*.webp,*.jpeg,*.map
+
+" --------------------------------
+"  Coc
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+" --------------------------------
+"  Ale
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
+" --------------------------------
+"  Custom keymaps
+
+nmap <silent> [c <Plug>(ale_previous_wrap)
+nmap <silent> ]c <Plug>(ale_next_wrap)
+
+nnoremap <C-p> :Files<CR>
+" <Leader> default \
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>h :History<CR>
+" Search Tags
+nnoremap <Leader>t :BTags<CR>
+nnoremap <Leader>T :Tags<CR>
 
 " --------------------------------
 " JavaScript specific stuff
@@ -20,4 +96,7 @@ call plug#end()
 let g:ale_fixers = {'javascript': ['prettier']}
 " Fix files automatically on save
 let g:ale_fix_on_save = 1
+let g:javascript_plugin_flow = 1
+
+
 

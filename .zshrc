@@ -33,6 +33,11 @@ alias gf="git fetch"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 
+export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
+
+# Fish syntax
+# set -gx FZF_DEFAULT_COMMAND  'rg --files --follow --hidden'
+
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
