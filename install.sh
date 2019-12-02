@@ -1,4 +1,4 @@
-DOTLOC=$HOME/repos/dotfiles
+DOTLOC=$HOME/repos/personal/dotfiles
 FUNPATH=/usr/local/share/zsh/site-functions
 
 info() {
@@ -9,6 +9,8 @@ info "Configuring"
 
 if [ "$(uname)" == "Darwin" ]; then
 	echo "Configuring macOS"
+	chmod +x ./os/macos/install.sh
+	chmod +x ./os/macos/configure.sh
 	./os/macos/install.sh
 	./os/macos/configure.sh
 elif [ "$(uname)" == "Linux" ]; then
@@ -16,9 +18,6 @@ elif [ "$(uname)" == "Linux" ]; then
 	./os/ubuntu/install.sh
 fi
 
-
-#install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 
 #install vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -30,18 +29,15 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 #install neovim python deps
 pip install --user neovim
 
-#create nvim config dir
-mkdir ~/.config
-mkdir ~/.config/nvim
-
 # link required files
 echo "Linking Files..."
-for file in zshrc zshenv gitconfig gitignore nvimrc
+for file in zshrc  gitconfig
 do
   rm ~/.$file &>/dev/null
-  ln -s "$DOTLOC/$file" ~/.$file
+  echo "linking -$DOTLOC/.$file $HOME/.$file"
+  ln -s "$DOTLOC/.$file" "$HOME/.$file"
 done
-ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
+#ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
 
 # cleanup old prompt files
 if [[ -x $FUNPATH/prompt_pure_setup && -x $FUNPATH/async ]]; then
@@ -57,26 +53,17 @@ ln -s "$DOTLOC/completions/_repo" $FUNPATH/_repo
 success
 
 # change default shell to zsh
-chsh -s zsh
-
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/repos/dotfiles/.zshrc $HOME/.zshrc
+chsh -s /bin/zsh
 
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-mkdir -p ~/.config/
-mkdir -p ~/.config/nvim/
+mkdir -p ~/.config/nvim
 echo "linking ${DOTLOC}/.vimrc to ~/.config/nvim/init.vim"
 ln -s $DOTLOC/.nvimrc ~/.config/nvim/init.vim
 pip3 install neovim
 
-echo "Installing patched fonts"
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-cd ..
-rm -rf fonts
+# set executable
+chmod +x ./bin/tat
 
 echo "done"

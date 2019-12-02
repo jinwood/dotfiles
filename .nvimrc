@@ -16,7 +16,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Appearance and Themes
 Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim'
-
 call plug#end()
 
 " Tabs and spaces
@@ -35,7 +34,7 @@ let g:gruvbox_material_enable_bold = 1
 set number " Show line numbers
 set noswapfile " No swap file
 set nobackup
-set nowritebackup
+set noswapfile
 
 set textwidth=80
 set formatoptions+=t
