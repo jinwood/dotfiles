@@ -14,7 +14,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
+Plug 'prettier/vim-prettier'
 " Appearance and Themes
+Plug 'sickill/vim-monokai'
 Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim'
 call plug#end()
