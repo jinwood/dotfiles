@@ -29,9 +29,10 @@ set shiftwidth=2 " when indenting with '>', use 2 spaces width
 
 " Misc
 
+set cursorline
 set termguicolors
 set background=dark
-colorscheme gruvbox-material
+colorscheme nord
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1
 set number " Show line numbers
