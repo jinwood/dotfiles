@@ -19,6 +19,9 @@ Plug 'prettier/vim-prettier'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'felixhummel/setcolors.vim'
+Plug 'jonathanfilip/lucius'
 call plug#end()
 
 " Tabs and spaces
@@ -32,7 +35,8 @@ set shiftwidth=2 " when indenting with '>', use 2 spaces width
 set cursorline
 set termguicolors
 set background=dark
-colorscheme PaperColor
+colorscheme gruvbox-material
+let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1
 set number " Show line numbers
