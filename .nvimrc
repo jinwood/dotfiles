@@ -22,6 +22,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'flazz/vim-colorschemes'
 Plug 'felixhummel/setcolors.vim'
 Plug 'jonathanfilip/lucius'
+Plug 'kyoto-shift/film-noir'
 call plug#end()
 
 " Tabs and spaces
@@ -31,6 +32,10 @@ set softtabstop=2
 set shiftwidth=2 " when indenting with '>', use 2 spaces width
 
 " Misc
+
+" turn hybrid line numbers on
+set number                     " Show current line number
+set relativenumber             " Show relative line numbers
 
 set cursorline
 set termguicolors
