@@ -16,6 +16,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'prettier/vim-prettier'
 " Appearance and Themes
+Plug 'agreco/vim-citylights'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'sainnhe/gruvbox-material'
 Plug 'itchyny/lightline.vim'
@@ -40,7 +41,7 @@ set relativenumber             " Show relative line numbers
 set cursorline
 set termguicolors
 set background=dark
-colorscheme gruvbox-material
+colorscheme citylights
 let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1
@@ -84,8 +85,10 @@ inoremap <silent><expr> <Tab>
 " --------------------------------
 "  Ale
 
-let g:ale_sign_error = '❌'
+let g:ale_sign_error = '💩'
 let g:ale_sign_warning = '⚠️'
+highlight clear ALEWarningSign
+highlight clear ALEErrorSign
 
 " --------------------------------
 "  Custom keymaps
