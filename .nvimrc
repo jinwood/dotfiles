@@ -24,6 +24,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'felixhummel/setcolors.vim'
 Plug 'jonathanfilip/lucius'
 Plug 'kyoto-shift/film-noir'
+Plug 'arzg/vim-corvine'
 call plug#end()
 
 " Tabs and spaces
@@ -41,7 +42,7 @@ set relativenumber             " Show relative line numbers
 set cursorline
 set termguicolors
 set background=dark
-colorscheme citylights
+colorscheme corvine
 let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1
