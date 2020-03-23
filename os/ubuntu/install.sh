@@ -4,7 +4,7 @@ sudo apt update
 sudo apt install terminator
 sudo apt install git
 sudo apt install golang
-sudo apt install grep
+sudo apt install ripgrep
 sudo apt install python3
 sudo apt install python3-pip
 sudo apt install fzf
