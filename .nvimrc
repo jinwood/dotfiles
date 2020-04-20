@@ -25,6 +25,7 @@ Plug 'felixhummel/setcolors.vim'
 Plug 'jonathanfilip/lucius'
 Plug 'kyoto-shift/film-noir'
 Plug 'arzg/vim-corvine'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " Tabs and spaces
@@ -42,7 +43,7 @@ set relativenumber             " Show relative line numbers
 set cursorline
 set termguicolors
 set background=dark
-colorscheme corvine
+colorscheme nord
 let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1
@@ -113,6 +114,5 @@ let g:ale_fixers = {'javascript': ['prettier']}
 " Fix files automatically on save
 let g:ale_fix_on_save = 1
 let g:javascript_plugin_flow = 1
-
 
 
