@@ -11,6 +11,7 @@ alias gaa="git add ."
 alias greset="git reset --hard"
 alias gf="git fetch -all"
 alias gcd="git checkout develop && git pull origin develop"
+alias python="python3"
 
 # Add homebrew python to the path
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
