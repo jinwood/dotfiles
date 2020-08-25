@@ -26,6 +26,7 @@ Plug 'jonathanfilip/lucius'
 Plug 'kyoto-shift/film-noir'
 Plug 'arzg/vim-corvine'
 Plug 'arcticicestudio/nord-vim'
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 " Tabs and spaces
@@ -43,7 +44,7 @@ set relativenumber             " Show relative line numbers
 set cursorline
 set termguicolors
 set background=dark
-colorscheme nord
+colorscheme gruvbox-material
 let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1

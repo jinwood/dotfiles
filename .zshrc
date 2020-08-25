@@ -6,11 +6,8 @@ export PATH="/Users/xrgck/.deno/bin:$PATH"
 
 alias vim=nvim
 # git
-alias gs="git status"
-alias gaa="git add ."
-alias greset="git reset --hard"
-alias gf="git fetch -all"
-alias gcd="git checkout develop && git pull origin develop"
+alias git-reset="git reset --hard"
+alias git-local-branch="!git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'"
 alias python="python3"
 
 # Add homebrew python to the path
