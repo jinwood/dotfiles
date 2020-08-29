@@ -4,6 +4,9 @@ FUNPATH=/usr/local/share/zsh/site-functions
 info() {
     printf "\033[00;34m$@\033[0m\n"
 }
+doing() {
+    printf "\033[00;34m$@\033[0m\n"
+}
 
 info "Configuring"
 
@@ -28,7 +31,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
 #install neovim python deps
-pip install --user neovim
+pip3 install --user neovim
 
 # link required files
 echo "Linking Files..."
