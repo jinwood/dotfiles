@@ -1,6 +1,8 @@
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+export PATH=/usr/local/share/npm/bin:$PATH
+
 # Deno
 export PATH="/Users/xrgck/.deno/bin:$PATH"
 
@@ -9,6 +11,7 @@ alias vim=nvim
 alias git-reset="git reset --hard"
 alias git-local-branch="!git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'"
 alias python="python3"
+alias vim=nvim
 
 # Add homebrew python to the path
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"

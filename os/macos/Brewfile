@@ -1,4 +1,3 @@
-brew 'node'
 brew 'bash'
 brew 'coreutils' #macos bundled are outdated
 brew 'git'

@@ -22,6 +22,13 @@ elif [ "$(uname)" == "Linux" ]; then
 	./os/ubuntu/install.sh
 fi
 
+#install nvm and node
+echo "Installing nvm"
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm install node
 
 #install vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \

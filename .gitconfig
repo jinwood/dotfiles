@@ -6,5 +6,7 @@
 [alias]
     local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
 
-[includeIf "gitdir:~/qt/"]
+[includeIf "gitdir:~/repos/qt/"]
   path=.gitconfig-qt
+[pull]
+	rebase = false
