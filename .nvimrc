@@ -36,15 +36,13 @@ set softtabstop=2
 set shiftwidth=2 " when indenting with '>', use 2 spaces width
 
 " Misc
+colorscheme gruvbox-material
 
 " turn hybrid line numbers on
 set number                     " Show current line number
 set relativenumber             " Show relative line numbers
 
 set cursorline
-set termguicolors
-set background=dark
-colorscheme gruvbox-material
 let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1
