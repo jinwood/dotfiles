@@ -12,9 +12,3 @@ sed -i 'npm set prefix ~/.npm
 PATH="$HOME/.npm/bin:$PATH"
 PATH="./node_modules/.bin:$PATH"' ~/.bashrc
 ```
-
-# fix audio shit
-```
-pulseaudio -k
-pulseaudio --start
-```
