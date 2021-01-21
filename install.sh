@@ -22,14 +22,6 @@ elif [ "$(uname)" == "Linux" ]; then
 	./os/ubuntu/install.sh
 fi
 
-#install nvm and node
-echo "Installing nvm"
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm install node
-
 #install vim plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -39,6 +31,8 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 
 #install neovim python deps
 pip3 install --user neovim
+
+mkdir -p ~/.config/nvim
 
 # link required files
 echo "Linking Files..."
@@ -69,7 +63,6 @@ chsh -s /bin/zsh
 # install ohmyzsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-mkdir -p ~/.config/nvim
 echo "linking ${DOTLOC}/.vimrc to ~/.config/nvim/init.vim"
 ln -s $DOTLOC/.nvimrc ~/.config/nvim/init.vim
 pip3 install neovim
