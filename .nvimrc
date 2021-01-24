@@ -27,6 +27,7 @@ Plug 'kyoto-shift/film-noir'
 Plug 'arzg/vim-corvine'
 Plug 'arcticicestudio/nord-vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'nightsense/cosmic_latte'
 call plug#end()
 
 " Tabs and spaces
@@ -36,7 +37,8 @@ set softtabstop=2
 set shiftwidth=2 " when indenting with '>', use 2 spaces width
 
 " Misc
-colorscheme gruvbox-material
+colorscheme PaperColor
+set background=dark
 
 " turn hybrid line numbers on
 set number                     " Show current line number
