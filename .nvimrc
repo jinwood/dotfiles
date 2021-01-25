@@ -28,6 +28,7 @@ Plug 'arzg/vim-corvine'
 Plug 'arcticicestudio/nord-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'nightsense/cosmic_latte'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " Tabs and spaces
