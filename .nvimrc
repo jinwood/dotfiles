@@ -37,7 +37,7 @@ set softtabstop=2
 set shiftwidth=2 " when indenting with '>', use 2 spaces width
 
 " Misc
-colorscheme cosmic_latte
+colorscheme 1989
 set background=dark
 
 " turn hybrid line numbers on
