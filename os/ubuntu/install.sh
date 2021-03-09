@@ -2,8 +2,6 @@ sudo apt update
 
 #tools
 sudo apt install terminator
-sudo apt install git
-sudo apt install golang
 sudo apt install ripgrep
 sudo apt install python3
 sudo apt install python3-pip
@@ -16,9 +14,6 @@ sudo apt install zsh-history-substring-search
 sudo apt install zsh-syntax-highlighting
 
 #programs
-sudo apt install firefox
-sudo apt install chromium
-sudo apt install mongodb
 sudo snap install --classic code
 sudo apt-get install python3-neovim
 sudo apt install neovim
