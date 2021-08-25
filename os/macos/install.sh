@@ -2,14 +2,14 @@
 # install homebrew
 if [[ ! -x "$(command -v brew)" ]]; then
   echo "Installing homebrew...\\n"
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  else
   echo "Homebrew is already installed.\\n"
 fi
 
 echo "Installing packages"
 echo $(pwd)
-brew bundle --file="./os/macos/Brewfile"
+brew bundle --file="./Brewfile"
 
 echo "--------------------------------"
 echo "Configuring OS"
@@ -80,8 +80,8 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 
 echo "Setting up Screenshots directory"
-mkdir -p ~/Screen\ Shots
-defaults write com.apple.screencapture location ~/Screen\ Shots
+mkdir -p ~/Screenshots
+defaults write com.apple.screencapture location ~/Screenshots
 
 echo "Setting up Safari developer tools"
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
