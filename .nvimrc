@@ -28,7 +28,6 @@ Plug 'arzg/vim-corvine'
 Plug 'arcticicestudio/nord-vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'nightsense/cosmic_latte'
-Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " Tabs and spaces
@@ -38,7 +37,7 @@ set softtabstop=2
 set shiftwidth=2 " when indenting with '>', use 2 spaces width
 
 " Misc
-colorscheme onedark
+colorscheme gruvbox
 set background=dark
 
 " turn hybrid line numbers on

@@ -59,6 +59,7 @@ chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo "linking ${DOTLOC}/.vimrc to ~/.config/nvim/init.vim"
+mkdir ~./config/nvim
 ln -s $DOTLOC/.nvimrc ~/.config/nvim/init.vim
 pip3 install neovim
 
