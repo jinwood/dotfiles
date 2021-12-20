@@ -1,6 +1,18 @@
 DOTLOC=$HOME/repos/personal/dotfiles
 FUNPATH=/usr/local/share/zsh/site-functions
 
+SCRIPT_ROOT=$(cd "$(dirname "$0")" || exit 1; pwd)
+if [ -d "$SCRIPT_ROOT/setup" ]; then
+  SCRIPT_ROOT="$(dirname "${SCRIPT_ROOT}")"
+fi
+
+chmod +x ./os.sh
+OS=$(./os.sh)
+
+echo $OS
+
+exit 0
+
 info() {
     printf "\033[00;34m$@\033[0m\n"
 }
@@ -8,9 +20,10 @@ doing() {
     printf "\033[00;34m$@\033[0m\n"
 }
 
-info "Configuring"
-
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" == "ManjaroLinux" ]; then
+  echo "Configuring Manjaro"
+  chmod +x ./os/manjaro/configure.sh
+elif [ "$(uname)" == "Darwin" ]; then
 	echo "Configuring macOS"
 	chmod +x ./os/macos/install.sh
 	chmod +x ./os/macos/configure.sh

@@ -1,0 +1,15 @@
+community/signal-desktop
+multilib/steam-manjaro
+community/telegram-desktop
+extra/vlc
+neovim-git
+ripgrep-git
+python3
+fzf
+zsh-completions
+zsh-autosuggestions
+zsh-completions
+zsh-history-substring-search
+zsh-syntax-highlighting
+visual-studio-code-bin
+python-pip-git
