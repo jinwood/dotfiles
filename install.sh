@@ -42,10 +42,10 @@ curl -fsSL https://deno.land/x/install/install.sh | sh
 
 # link required files
 echo "Linking Files..."
-for file in zshrc gitconfig
+for file in zshrc gitconfig gitconfig-quest
 do
   rm ~/.$file &>/dev/null
-  echo "linking -$DOTLOC/.$file $HOME/.$file"
+  echo "linking -/home/julian/repos/dotfiles/.$file /home/julian/.$file"
   ln -s "$DOTLOC/.$file" "$HOME/.$file"
 done
 #ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
