@@ -1,4 +1,4 @@
-DOTLOC=$HOME/repos/personal/dotfiles
+DOTLOC=$HOME/repos/dotfiles
 FUNPATH=/usr/local/share/zsh/site-functions
 
 SCRIPT_ROOT=$(cd "$(dirname "$0")" || exit 1; pwd)
@@ -70,7 +70,7 @@ for file in zshrc gitconfig gitconfig-quest
 do
   rm ~/.$file &>/dev/null
   echo "linking -/home/julian/repos/dotfiles/.$file /home/julian/.$file"
-  ln -s "$DOTLOC/.$file" "$HOME/.$file"
+  ln -s "$DOTLOC/.$file" "$HOME/.$file" 
 done
 #ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
 
