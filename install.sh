@@ -66,12 +66,14 @@ pip3 install neovim
 
 # link required files
 echo "Linking Files..."
-for file in zshrc gitconfig gitconfig-quest
-do
+for file in zshrc gitconfig gitconfig-quest helix-config
+ do
   rm ~/.$file &>/dev/null
   echo "linking -/home/julian/repos/dotfiles/.$file /home/julian/.$file"
   ln -s "$DOTLOC/.$file" "$HOME/.$file" 
 done
+
+ln -s "$DOTLOC/helix-config.toml" "$HOME/config/helix/config.toml"
 #ln -s $(pwd)/init.vim ~/.config/nvim/init.vim
 
 
@@ -80,5 +82,8 @@ chmod +x ./bin/tat
 
 # change default shell to zsh
 chsh -s /bin/zsh
+
+# npm
+npm i -g typescript typescript-language-server
 
 echo "done"
