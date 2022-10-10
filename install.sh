@@ -49,7 +49,7 @@ if [[ -x $FUNPATH/prompt_pure_setup && -x $FUNPATH/async ]]; then
 fi
 
 # install ohmyzsh
-sh -c "sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 doing "Installing completions..."
 if [[ -x $FUNPATH/_repo ]]; then

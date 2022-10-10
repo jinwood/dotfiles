@@ -17,9 +17,10 @@ brew 'zsh-syntax-highlighting'
 
 cask 'alfred'
 cask 'firefox'
-#cask 'brave-browser'
+# cask 'brave-browser'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'sublime-text'
-#cask 'visual-studio-code'
-
+# cask 'visual-studio-code'
+cask 'signal'
+cask 'slack'
