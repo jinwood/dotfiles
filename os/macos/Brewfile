@@ -1,3 +1,5 @@
+tap 'homebrew/cask-fonts'
+
 brew 'node'
 brew 'bash'
 brew 'coreutils' #macos bundled are outdated
@@ -15,9 +17,10 @@ brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 brew 'zsh-history-substring-search'
 brew 'zsh-syntax-highlighting'
+cask 'font-hack-nerd-font'
 
 cask 'alfred'
-cask 'firefox'
+
 # cask 'brave-browser'
 cask 'google-chrome'
 cask 'iterm2'

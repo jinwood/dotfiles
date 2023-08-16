@@ -3,6 +3,7 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 export PATH=/usr/local/share/npm/bin:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Deno
 export PATH="/Users/xrgck/.deno/bin:$PATH"
