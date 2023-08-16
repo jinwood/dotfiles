@@ -10,6 +10,7 @@ brew 'neovim'
 brew 'python3'
 brew 'ripgrep'
 brew 'helix'
+brew 'lazygit'
 
 brew 'zsh'
 brew 'zsh-completions'
