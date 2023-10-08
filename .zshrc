@@ -6,7 +6,8 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export PATH="/opt/homebrew/bin:$PATH"
 
 # Deno
-export PATH="/Users/xrgck/.deno/bin:$PATH"
+export DENO_INSTALL="/Users/julianinwood/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 alias vim=nvim
 # git
@@ -128,3 +129,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=$PATH:/Users/julianinwood/.spicetify
+
+# bun completions
+[ -s "/Users/julianinwood/.bun/_bun" ] && source "/Users/julianinwood/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by Amplify CLI binary installer
+export PATH="$HOME/.amplify/bin:$PATH"
+
