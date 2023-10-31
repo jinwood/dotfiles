@@ -5,11 +5,13 @@ export EDITOR="$VISUAL"
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH="/opt/homebrew/bin:$PATH"
 
+
 # Deno
 export DENO_INSTALL="/Users/julianinwood/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 alias vim=nvim
+
 # git
 alias git-reset="git reset --hard"
 alias git-local-branch="!git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'"
@@ -97,8 +99,9 @@ ZSH_THEME="robbyrussell"
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
+plugins=(fzf)
+# Add wisely, as too many plugins slow down shell startup.
 
 source $ZSH/oh-my-zsh.sh
 
