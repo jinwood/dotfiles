@@ -21,12 +21,8 @@ brew 'zsh-history-substring-search'
 brew 'zsh-syntax-highlighting'
 cask 'font-hack-nerd-font'
 
-cask 'alfred'
-
-# cask 'brave-browser'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'sublime-text'
-# cask 'visual-studio-code'
 cask 'signal'
 cask 'slack'
