@@ -24,23 +24,6 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
-# lazyload nvm as its slow
-lazy_load_nvm() {
-  unset -f node nvm
-  export NVM_DIR=~/.nvm
-  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-}
-
-node() {
-  lazy_load_nvm
-  node $@
-}
-
-nvm() {
-  lazy_load_nvm
-  node $@
-}
-
 export ZSH="/$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -70,4 +53,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
 
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
