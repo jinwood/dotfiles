@@ -72,7 +72,19 @@ done
 # set executable
 chmod +x ./bin/tat
 
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+nvm install node
+nvm use node
+
 # npm
 npm i -g typescript typescript-language-server
+
+# lazyvim
+rm -rf ~/.config/nvim/*
+git clone git@github.com:jinwood/lazyvim-config.git ~/.config/nvim
 
 echo "done"
