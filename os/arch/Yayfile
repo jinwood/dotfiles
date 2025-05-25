@@ -1,8 +1,8 @@
-community/signal-desktop
+signal-desktop
 multilib/steam-manjaro
 extra/vlc
 neovim-git
-ripgrep-git
+ripgrep
 python3
 fzf
 zsh-completions
@@ -10,5 +10,7 @@ zsh-autosuggestions
 zsh-completions
 zsh-history-substring-search
 zsh-syntax-highlighting
-python-pip-git
+python-pip
 deno
+nerd-fonts-hack
+lazygit

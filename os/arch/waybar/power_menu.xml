@@ -1,0 +1,7 @@
+
+<menu id="power">
+  <item label="Shutdown" action="shutdown" />
+  <item label="Reboot" action="reboot" />
+  <item label="Suspend" action="suspend" />
+  <item label="Hibernate" action="hibernate" />
+</menu>
