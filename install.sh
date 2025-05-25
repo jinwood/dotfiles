@@ -53,11 +53,6 @@ if [[ -x $FUNPATH/_repo ]]; then
 fi
 ln -s "$DOTLOC/completions/_repo" $FUNPATH/_repo
 
-echo "linking ${DOTLOC}/.vimrc to ~/.config/nvim/init.vim"
-rm -rf ~/.config/nvim/
-mkdir ~/.config
-mkdir ~/.config/nvim
-ln -s $DOTLOC/.nvimrc ~/.config/nvim/init.vim
 pip3 install neovim
 
 # link required files
