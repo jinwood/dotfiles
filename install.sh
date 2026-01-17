@@ -75,7 +75,7 @@ npm i -g typescript typescript-language-server
 
 # link required files
 echo "Linking Files..."
-for file in .zshrc .gitconfig; do
+for file in .zshrc .gitconfig .tmux.conf; do
   target="$HOME/$file"
   source="$DOTLOC/$file"
   echo "linking $source -> $target"
