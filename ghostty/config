@@ -1,0 +1,35 @@
+# ~/.config/ghostty/config
+
+# --- Fonts & Appearance ---
+# Ghostty has built-in Nerd Font fallback, but explicitly defining a patched font 
+# ensures perfect alignment for Neovim icons and Claude Code's markdown UI.
+font-family = "JetBrainsMono Nerd Font"
+font-size = 20
+
+# Disable programming ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
+# Ghostty ships with many built-in themes (e.g., tokyonight, dracula, rose-pine)
+#theme = Catppuccin Mocha
+theme = tokyonight
+window-padding-x = 4
+window-padding-y = 4
+mouse-hide-while-typing = true
+
+# --- Tmux & Neovim Quality of Life ---
+# Enable OSC 52 clipboard integration. This allows yanking text inside Neovim 
+# (even over SSH or inside Tmux) to seamlessly sync to your system clipboard.
+clipboard-read = allow
+clipboard-write = allow
+copy-on-select = true
+
+# (macOS only) Crucial for Neovim if you use Option/Alt mappings (e.g., <A-j>). 
+# Remove if you are on Linux.
+macos-option-as-alt = true
+
+# --- Claude Code Image Paste Workaround ---
+# Sends the raw Ctrl+V byte (\x16) to the application. 
+# Use Cmd+Shift+V when you need to paste an image directly into Claude Code.
+keybind = super+shift+v=text:\x16

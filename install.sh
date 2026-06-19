@@ -1,4 +1,8 @@
-DOTLOC=$HOME/repos/dotfiles
+if [ -d "$HOME/repos/jinwood/dotfiles" ]; then
+  DOTLOC=$HOME/repos/jinwood/dotfiles
+else
+  DOTLOC=$HOME/repos/dotfiles
+fi
 FUNPATH=/usr/local/share/zsh/site-functions
 
 SCRIPT_ROOT=$(cd "$(dirname "$0")" || exit 1; pwd)
@@ -82,5 +86,10 @@ for file in .zshrc .gitconfig .tmux.conf; do
   rm -f "$target"
   ln -s "$source" "$target"
 done
+
+echo "Linking ghostty config..."
+mkdir -p "$HOME/.config/ghostty"
+rm -f "$HOME/.config/ghostty/config"
+ln -s "$SCRIPT_ROOT/ghostty/config" "$HOME/.config/ghostty/config"
 
 echo "done"
