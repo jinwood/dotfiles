@@ -17,6 +17,7 @@ theme = tokyonight
 window-padding-x = 4
 window-padding-y = 4
 mouse-hide-while-typing = true
+mouse-scroll-multiplier = 1
 
 # --- Tmux & Neovim Quality of Life ---
 # Enable OSC 52 clipboard integration. This allows yanking text inside Neovim 
