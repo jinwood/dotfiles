@@ -1,70 +1,79 @@
-if [ -d "$HOME/repos/jinwood/dotfiles" ]; then
-  DOTLOC=$HOME/repos/jinwood/dotfiles
-else
-  DOTLOC=$HOME/repos/dotfiles
-fi
-FUNPATH=/usr/local/share/zsh/site-functions
+#!/usr/bin/env bash
 
-SCRIPT_ROOT=$(cd "$(dirname "$0")" || exit 1; pwd)
-if [ -d "$SCRIPT_ROOT/setup" ]; then
-  SCRIPT_ROOT="$(dirname "${SCRIPT_ROOT}")"
-fi
+set -euo pipefail
 
-chmod +x ./os.sh
-OS=$(./os.sh)
-
-echo $OS
+SCRIPT_ROOT=$(cd "$(dirname "$0")" && pwd)
+DOTLOC="$SCRIPT_ROOT"
+FUNPATH="$HOME/.local/share/zsh/site-functions"
+OS="$($SCRIPT_ROOT/os.sh)"
 
 info() {
-    printf "\033[00;34m$@\033[0m\n"
+    printf '\033[00;34m%s\033[0m\n' "$*"
 }
 doing() {
-    printf "\033[00;34m$@\033[0m\n"
+    info "$@"
 }
 
-if [ "$OS" == "ManjaroLinux" ] || [ "$OS" == "arch" ]; then
-  echo "Configuring Arch/Manjaro"
-  chmod +x ./os/arch/install.sh
-  ./os/arch/install.sh
-elif [ "$(uname)" == "Darwin" ]; then
-	echo "Configuring macOS"
-	chmod +x ./os/macos/install.sh
-	chmod +x ./os/macos/configure.sh
-	./os/macos/install.sh
-	./os/macos/configure.sh
-elif [ "$(uname)" == "Linux" ]; then
-	echo "Configuring Linux"
-	chmod +x ./os/ubuntu/install.sh
-	./os/ubuntu/install.sh
-fi
+info "Detected operating system: $OS"
+
+case "$OS" in
+  arch|manjaro|manjarolinux)
+    info "Configuring Arch/Manjaro"
+    "$SCRIPT_ROOT/os/arch/install.sh"
+    ;;
+  fedora)
+    info "Configuring Fedora"
+    "$SCRIPT_ROOT/os/fedora/install.sh"
+    ;;
+  macos)
+    info "Configuring macOS"
+    "$SCRIPT_ROOT/os/macos/install.sh"
+    "$SCRIPT_ROOT/os/macos/configure.sh"
+    ;;
+  ubuntu|debian|linuxmint|pop)
+    info "Configuring Debian/Ubuntu"
+    "$SCRIPT_ROOT/os/ubuntu/install.sh"
+    ;;
+  codespace)
+    info "Codespace detected; skipping system package installation"
+    ;;
+  *)
+    printf 'Unsupported operating system: %s\n' "$OS" >&2
+    exit 1
+    ;;
+esac
+
+# OpenCode is packaged natively on macOS and Arch. Install its official binary
+# on the Linux distributions where it is not available in the default repos.
+case "$OS" in
+  fedora|ubuntu|debian|linuxmint|pop|codespace)
+    curl -fsSL https://opencode.ai/install | bash -s -- --no-modify-path
+    ;;
+esac
 
 #install deno
 curl -fsSL https://deno.land/x/install/install.sh | sh
 
 
-# cleanup old prompt files
-rm -rf ~/.oh-my-zsh
-if [[ -x $FUNPATH/prompt_pure_setup && -x $FUNPATH/async ]]; then
-  rm -f $FUNPATH/prompt_pure_setup
-  rm -f $FUNPATH/async
-fi
-
 # install ohmyzsh
 export RUNZSH=no
 export KEEP_ZSHRC=yes
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 doing "Installing completions..."
-if [[ -x $FUNPATH/_repo ]]; then
-  rm -f $FUNPATH/_repo
-fi
-ln -s "$DOTLOC/completions/_repo" $FUNPATH/_repo
+mkdir -p "$FUNPATH"
+ln -sfn "$DOTLOC/completions/_repo" "$FUNPATH/_repo"
 
-echo "Cloning lazyvim config"
-git clone git@github.com:jinwood/lazyvim-config.git "$HOME/.config/nvim"
+if [ ! -e "$HOME/.config/nvim" ]; then
+  echo "Cloning lazyvim config"
+  mkdir -p "$HOME/.config"
+  git clone git@github.com:jinwood/lazyvim-config.git "$HOME/.config/nvim"
+fi
 
 # set executable
-chmod +x ./bin/tat
+chmod +x "$SCRIPT_ROOT/bin/tat"
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
@@ -83,13 +92,17 @@ for file in .zshrc .gitconfig .tmux.conf; do
   target="$HOME/$file"
   source="$DOTLOC/$file"
   echo "linking $source -> $target"
-  rm -f "$target"
-  ln -s "$source" "$target"
+  ln -sfn "$source" "$target"
 done
 
 echo "Linking ghostty config..."
 mkdir -p "$HOME/.config/ghostty"
-rm -f "$HOME/.config/ghostty/config"
-ln -s "$SCRIPT_ROOT/ghostty/config" "$HOME/.config/ghostty/config"
+ln -sfn "$SCRIPT_ROOT/ghostty/config" "$HOME/.config/ghostty/config"
 
-echo "done"
+info "Done"
+
+if [ "${SHELL:-}" != "$(command -v zsh)" ]; then
+  info "Your current session is not Zsh. Run 'exec zsh -l' or open a new login session to load the aliases."
+else
+  info "Open a new terminal or run 'exec zsh -l' to load the updated configuration."
+fi

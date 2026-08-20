@@ -1,14 +1,25 @@
 #!/usr/bin/env sh
-OS=""
-if [ -f /etc/lsb-release ]; then
+
+set -eu
+
+OS_RELEASE_FILE="${OS_RELEASE_FILE:-/etc/os-release}"
+
+if [ "$(uname -s)" = "Darwin" ]; then
+  os="macos"
+elif [ -r "$OS_RELEASE_FILE" ]; then
+  # shellcheck disable=SC1090
+  . "$OS_RELEASE_FILE"
+  os="${ID:-linux}"
+elif [ -r /etc/lsb-release ]; then
   # shellcheck disable=SC1091
   . /etc/lsb-release
-  OS="${DISTRIB_ID:-Ubuntu}"
-elif [ "$(uname -s)" = "Darwin" ]; then
-  OS="macos"
-fi 
-case "$(uname -n)" in codespace*)
-  OS="codespace"
-  ;;
+  os=$(printf '%s' "${DISTRIB_ID:-linux}" | tr '[:upper:]' '[:lower:]')
+else
+  os="$(uname -s | tr '[:upper:]' '[:lower:]')"
+fi
+
+case "$(uname -n)" in
+  codespace*) os="codespace" ;;
 esac
-echo "$OS"
+
+printf '%s\n' "$os"

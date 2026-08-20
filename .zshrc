@@ -2,13 +2,18 @@ ZSH_DISABLE_COMPFIX=true
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
-export PATH=/usr/local/share/npm/bin:$PATH
-export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.opencode/bin:$PATH"
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  export PATH="/usr/local/share/npm/bin:/opt/homebrew/bin:$PATH"
+  export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"
+  export PATH="/usr/local/opt/python/libexec/bin:/usr/local/opt/ruby/bin:$PATH"
+fi
 
 # Deno
-export DENO_INSTALL="/Users/julianinwood/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
-export PATH="/opt/homebrew/opt/dotnet@6/bin:$PATH"
 
 alias vim=nvim
 
@@ -18,13 +23,12 @@ alias git-local-branch="!git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1
 alias python="python3"
 alias vim=nvim
 
-# Add homebrew python to the path
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-
 export FZF_DEFAULT_COMMAND='rg --files --follow --hidden'
 
-export ZSH="/$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
+
+# User-installed completions (including this repository's `repo` command).
+fpath=("$HOME/.local/share/zsh/site-functions" $fpath)
 
 ZSH_THEME="robbyrussell"
 
@@ -39,10 +43,10 @@ plugins=(git fzf)
 source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:/Users/julianinwood/.spicetify
+export PATH="$PATH:$HOME/.spicetify"
 
 # bun completions
-[ -s "/Users/julianinwood/.bun/_bun" ] && source "/Users/julianinwood/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -55,5 +59,4 @@ export PATH="$HOME/.amplify/bin:$PATH"
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-export PATH="$HOME/.local/bin:$PATH"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

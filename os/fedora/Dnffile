@@ -1,0 +1,17 @@
+curl
+findutils
+fzf
+git
+ghostty
+neovim
+python3
+python3-neovim
+python3-pip
+ripgrep
+tmux
+util-linux-user
+wl-clipboard
+xclip
+zsh
+zsh-autosuggestions
+zsh-syntax-highlighting

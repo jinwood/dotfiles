@@ -13,7 +13,7 @@ font-feature = -dlig
 
 # Ghostty ships with many built-in themes (e.g., tokyonight, dracula, rose-pine)
 #theme = Catppuccin Mocha
-theme = tokyonight
+theme = TokyoNight
 window-padding-x = 4
 window-padding-y = 4
 mouse-hide-while-typing = true

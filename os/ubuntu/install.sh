@@ -7,6 +7,7 @@ sudo apt-get update
 sudo apt-get install neovim
 
 #tools
+sudo apt install curl
 sudo apt install terminator
 sudo apt install ripgrep
 sudo apt install python3
@@ -24,3 +25,6 @@ sudo apt install fzf
 snap install codium --classic
 sudo apt-get install python3-neovim
 sudo apt install neovim
+
+# Ghostty's community-maintained Ubuntu package.
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/mkasberg/ghostty-ubuntu/HEAD/install.sh)"
