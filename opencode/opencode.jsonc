@@ -1,0 +1,6 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode-go/glm-5.3",
+  "small_model": "opencode-go/deepseek-v4-flash",
+  "default_agent": "orchestrator"
+}

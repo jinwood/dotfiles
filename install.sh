@@ -99,6 +99,13 @@ echo "Linking ghostty config..."
 mkdir -p "$HOME/.config/ghostty"
 ln -sfn "$SCRIPT_ROOT/ghostty/config" "$HOME/.config/ghostty/config"
 
+echo "Linking OpenCode config..."
+mkdir -p "$HOME/.config/opencode/agent"
+ln -sfn "$SCRIPT_ROOT/opencode/opencode.jsonc" "$HOME/.config/opencode/opencode.jsonc"
+for agent in "$SCRIPT_ROOT"/opencode/agent/*.md; do
+  ln -sfn "$agent" "$HOME/.config/opencode/agent/$(basename "$agent")"
+done
+
 info "Done"
 
 if [ "${SHELL:-}" != "$(command -v zsh)" ]; then
