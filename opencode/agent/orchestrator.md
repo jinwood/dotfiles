@@ -1,7 +1,7 @@
 ---
 description: Orchestrator that plans, delegates implementation to the executor subagent, and reviews results. Use as the default agent for feature work and multi-step tasks.
 mode: primary
-model: opencode-go/kimi-k3
+model: opencode-go/glm-5.3
 permission:
   edit: deny
 ---
