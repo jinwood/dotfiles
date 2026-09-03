@@ -1,4 +1,3 @@
-tap 'homebrew/cask-fonts'
 tap 'anomalyco/tap'
 
 brew 'node'
@@ -13,11 +12,11 @@ brew 'ripgrep'
 brew 'lazygit'
 brew 'anomalyco/tap/opencode'
 brew 'fzf'
+brew 'tmux'
 
 brew 'zsh'
 brew 'zsh-completions'
 brew 'zsh-autosuggestions'
-brew 'zsh-completions'
 brew 'zsh-history-substring-search'
 brew 'zsh-syntax-highlighting'
 cask 'font-hack-nerd-font'

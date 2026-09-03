@@ -5,9 +5,9 @@ neovim-git
 ripgrep
 python3
 fzf
+tmux
 zsh-completions
 zsh-autosuggestions
-zsh-completions
 zsh-history-substring-search
 zsh-syntax-highlighting
 python-pip
